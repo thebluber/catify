@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "Catify",
+  "description": "",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": {
+      "19": "active-19.png",
+      "38": "active-38.png"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "icons": {
+    "16": "logo-16.png",
+    "48": "logo-48.png",
+    "128": "logo-128.png"
+  },
+
+  "background": {
+    "page": "background.html"
+  },
+
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [ "content.js" ],
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_end"
+    }
+  ],
+
+  "permissions": [
+    "tabs", "<all_urls>"
+  ]
+}
+
